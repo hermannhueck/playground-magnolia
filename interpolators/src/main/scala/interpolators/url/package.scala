@@ -10,6 +10,7 @@ package object url {
 
     type Output = Url
 
+    @com.github.ghik.silencer.silent("match may not be exhaustive")
     override def contextualize(interpolation: StaticInterpolation) = {
 
       val lit @ Literal(_, urlString) = interpolation.parts.head
