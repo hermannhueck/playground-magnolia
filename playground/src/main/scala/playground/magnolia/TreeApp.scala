@@ -6,8 +6,11 @@ import cats.Show
 import cats.instances.int._
 import cats.syntax.show._
 
-import derivations.show._
-import derivations.show.Tree.ShowDerivation.gen
+import playground.magnolia.show.ShowDerivation._
+
+sealed trait Tree[+T]                                      extends Product with Serializable
+final case class Branch[+T](left: Tree[T], right: Tree[T]) extends Tree[T]
+final case class Leaf[+T](value: T)                        extends Tree[T]
 
 object TreeApp extends util.App {
 
