@@ -18,13 +18,10 @@ inThisBuild(
     libraryDependencies ++= Seq(
       catsCore,
       magnolia,
-      contextual,
       silencerLib,
       silencerPlugin,
       kindProjectorPlugin,
-      betterMonadicForPlugin,
-      scalaTest  % Test,
-      scalaCheck % Test
+      betterMonadicForPlugin
     ),
     initialCommands :=
       s"""|
