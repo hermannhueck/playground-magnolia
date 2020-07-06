@@ -6,7 +6,7 @@ val projectDescription = "My playground to play with Magnolia and Contextual"
 val projectVersion     = "0.1.0"
 
 val scala212               = "2.12.11"
-val scala213               = "2.13.1"
+val scala213               = "2.13.3"
 val supportedScalaVersions = List(scala213, scala212)
 
 inThisBuild(
