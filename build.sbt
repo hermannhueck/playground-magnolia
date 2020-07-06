@@ -41,23 +41,13 @@ lazy val root = (project in file("."))
   )
 
 lazy val playground = (project in file("playground"))
-  .dependsOn(interpolators, compat213, util)
+  .dependsOn(compat213, util)
   .settings(
     name := "playground",
     description := "My playground to play with Magnolia and Contextual (magnolia + contextual use site)",
     scalacOptions ++= scalacOptionsFor(scalaVersion.value),
     // suppress unused import warnings in the scala repl
     console / scalacOptions := removeScalacOptionXlintUnusedForConsoleFrom(scalacOptions.value)
-  )
-
-lazy val interpolators = (project in file("interpolators"))
-  .settings(
-    name := "interpolators",
-    description := "Implementations of String Interpolators implemented with Contextual (contextual definition site)",
-    scalacOptions ++= scalacOptionsFor(scalaVersion.value),
-    libraryDependencies ++= Seq(
-      contextual
-    )
   )
 
 lazy val compat213 = (project in file("compat213"))
