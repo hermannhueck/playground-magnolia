@@ -41,20 +41,13 @@ lazy val root = (project in file("."))
   )
 
 lazy val playground = (project in file("playground"))
-  .dependsOn(compat213, util)
+  .dependsOn(util)
   .settings(
     name := "playground",
     description := "My playground to play with Magnolia and Contextual (magnolia + contextual use site)",
     scalacOptions ++= scalacOptionsFor(scalaVersion.value),
     // suppress unused import warnings in the scala repl
     console / scalacOptions := removeScalacOptionXlintUnusedForConsoleFrom(scalacOptions.value)
-  )
-
-lazy val compat213 = (project in file("compat213"))
-  .settings(
-    name := "compat213",
-    description := "compat library providing features of Scala 2.13 backported to 2.12",
-    scalacOptions ++= scalacOptionsFor(scalaVersion.value)
   )
 
 lazy val util = (project in file("util"))
