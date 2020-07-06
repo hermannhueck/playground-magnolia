@@ -2,7 +2,7 @@ import Dependencies._
 import ScalacOptions._
 
 val projectName        = "playground-magnolia"
-val projectDescription = "My playground to play with Magnolia and Contextual"
+val projectDescription = "My playground for propensive/magnolia"
 val projectVersion     = "0.1.0"
 
 val scala212               = "2.12.11"
@@ -22,13 +22,7 @@ inThisBuild(
       silencerPlugin,
       kindProjectorPlugin,
       betterMonadicForPlugin
-    ),
-    initialCommands :=
-      s"""|
-          |import scala.util.chaining._
-          |import util.syntax.pipe._
-          |println
-          |""".stripMargin // initialize REPL
+    )
   )
 )
 
